@@ -1,0 +1,365 @@
+extends includes/template
+
+block content
+    //head: Start
+    div.head
+        header.header
+            ul
+                li
+                    i(class="fa fa-phone", aria-hidden="true")
+                    a(href='skype:trademeta') Skype: trademeta
+                li.send-mess
+                    i(class="fa fa-envelope", aria-hidden="true")
+                    a(href='#') Написать сообщение
+
+
+        div.head__logo
+            a(href='index.html')
+                img(src='img/HTML5CSS3Logos.svg', alt='')
+                span.logo-text Качественная вёрстка сайтов. Backend и Frontend
+    //head: End
+
+    //slider: Start
+    div.slider
+        div.wrap
+            div.slick-slider
+                -
+                    var works = {
+                        'penoboard.jpg': 'http://trade-meta.ru/works/penoboard/',
+                        'flex.jpg': 'http://trade-meta.ru/works/flex/',
+                        'centrc.jpg': 'http://www.centrs-video.ru/',
+                        'creative.png': 'http://trade-meta.ru/works/creativezone/',
+                        'woofee.jpg': 'http://trade-meta.ru/works/woofee/'
+                        };
+                each link,img in works
+                    div: a(href=link, target='_blank'): img(src='img/'+ img , alt='')
+
+            div.slider-nav
+                span(id='prev')
+                    i(class="fa fa-caret-square-o-left", aria-hidden="true")
+                span(id='next')
+                    i(class="fa fa-caret-square-o-right", aria-hidden="true")
+    //slider: End
+
+    //layouts: Start
+    div.layouts
+        .wrap
+            h1 Вёрстка сайтов
+            div.layouts__top
+                div.juxtapose
+                    img(src="img/website.jpg", alt='')
+                    img(src="img/website-wb.jpg", alt='')
+            h2 Любой вид вёрстки
+            div.layouts__content
+                div.outer-block
+                ul.ul-kinds
+                    each layout,index in ['резиновая', 'фиксированная', 'адаптивная']
+                        li: span(class='l' + index) #{layout}
+    //layouts: End
+
+    //advantege: Start
+    div.advantage
+        .wrap
+            h2 Основные преимущества
+            ul
+                -
+                    var adv = {
+                    'PHP': 'Разработка сценариев с комментариями, знание MVC',
+                    'MYSQL': 'Владение SQL, разработка таблиц, оптимизация',
+                    'Wordpress': 'Разработка тем, плагинов, интеграция тем',
+                    'YII2': 'Разработка, доработка магазинов на фреймворке yii2',
+                    'Валидность': 'Код проверяется на валидность W3C перед сдачей работы',
+                    'Кроссбраузерность': 'Сайты выглядят одинаково во всех современных браузерах',
+                    'Соответствие макету': 'Сайт максимально соответствует макету, полученному от заказчика',
+                    'Читабельность кода': 'Код структурирован, сопровождается комментариями для удобной поддержки сайта в будущем',
+                    'Интерактивность': 'Интерактивные элементы реализуются с помощью JavaScript / jQuery',
+                    'Адаптивность': 'Корректное отображение сайта на различных устройствах'
+                    }
+                each advantage,title in adv
+                    li
+                        h3 #{title}
+                        p #{advantage}
+    //advantege: End
+
+    //portfolio: Start
+    div.portfolio
+        .wrap
+            h1.text3d Портфолио
+            //book:Start
+            div.book
+                div.hard
+                    h2.portf Портфолио
+                    h4.portf Trade-meta
+                -
+                    var portfolio = {
+                        'Сайт портфолио дизайнера - Liquid Gem': {
+                            'p': [
+                                'Работы сделана для портфолио на Wordpress.'
+                            ],
+                            'li': [
+                                '- интеграция html',
+                                '- работа с базой данных'
+                            ],
+                            'a':  'http://trade-meta.ru/works/liquidgem/',
+                            'img': 'img/liquidgem.jpg',
+                            'github': 'https://github.com/trademeta/liquidgem'
+                        },
+                        'Интернет-магазин - E-shoper': {
+                            'p': [
+                                'Работы сделана для портфолио. Сделал сайт для тренировки.'
+                            ],
+                            'li': [
+                                '- интеграция html',
+                                '- работа с базой данных',
+                                '- добавление товаров в корзину'
+                            ],
+                            'a':  'http://trade-meta.ru/works/e-shoper/',
+                                'img': 'img/e-shoper.jpg',
+                                'github': 'https://github.com/trademeta/e-shoper'
+                        },
+                        'Адаптивный сайт - Можайский': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.'
+                            ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- адаптивность'
+                            ],
+                            'a':  'http://trade-meta.ru/works/mojayskiy/',
+                            'img': 'img/rooms.jpg',
+                            'github': 'https://github.com/trademeta/bravo'
+                        },
+                        'Сайт строительной компании - Penoboard': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/penoboard/',
+                            'img': 'img/penoboard1.jpg',
+                            'github': 'https://github.com/trademeta/penoboard'
+                        },
+                        'Интернет - магазин "Flex"': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.',
+                                'Было когда-то тестовое задание сверстать этот сайт'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/flex/',
+                            'img': 'img/flex1.jpg',
+                            'github': 'https://github.com/trademeta/flex'
+                        },
+                        'Creative Zone - адаптивный Landing Page': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета. На сайте есть дополнительный функционал:Pixel Perfect и просмотр html-кода вёрстки.',
+                                'Адаптив в макете отсутствовал, своя доработка',
+                                'Работа выполнена исключительно для портфолио'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- Pixel Perfect',
+                                '- Просмотр html-кода',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/creativezone/',
+                            'img': 'img/creativezone.jpg'
+                        },
+                        'centrs-video.ru - видеонаблюдение': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета. ',
+                                'Только вёрстка без интеграции на cms'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://www.centrs-video.ru/',
+                            'img': 'img/centrs-video.jpg'
+                        },
+                        'Портал инфобизнеса': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.',
+                                'Адаптив в макете отсутствовал, своя доработка'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- нестандартный скроллинг',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/woofee/',
+                            'img': 'img/woofee1.jpg'
+                        },
+                        'Обучающий модуль - адаптивный сайт': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/laroche/',
+                            'img': 'img/laroche.jpg'
+                        },
+                        'Админка - адаптивный сайт': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.',
+                                'Также есть версия сайта для клиентов и менеджеров.',
+                                'Сделал минимальный функционал, нужна была только вёрстка'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- jQuery-эффекты'
+                                ],
+                            'a':  'http://trade-meta.ru/works/adminka/',
+                            'img': 'img/adminka.png'
+                        },
+                        'Конструктор макета сайта': {
+                            'p': [
+                                'Конструктор позволяет создавать, удалять блоки, растягивать их, добавлять картинки, рамки, текст, стиль текста, цвет.',
+                                'Весь функционал конструктора сделан полностью с нуля, взят только готовый плагин <strong>gridster</strong>.',
+                                'Вложенность блока в блоке в плагине <strong>gridster</strong> не предусмотрено. Своя доработка.'
+                                ],
+                            'li': [],
+                            'a':  'http://trade-meta.ru/works/constructor/',
+                            'img': 'img/builder.jpg'
+                        },
+                        'Адаптивный сайт - FitApp': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.'
+                            ],
+                            'li': [
+                                '- html5, css3',
+                                '- адаптивность'
+                            ],
+                            'a':  'http://trade-meta.ru/works/fitapp/',
+                            'img': 'img/fitapp.jpg'
+                        },
+                        'Адаптивный сайт - Landing-page': {
+                            'p': [
+                                'Вёрстка сайта из psd-макета.',
+                                'Сайт делался для портфолио.'
+                                ],
+                            'li': [
+                                '- html5, css3',
+                                '- слайдер, jQuery-эффекты',
+                                '- появление контента при скроллинге',
+                                '- меню, всплывающие окна',
+                                '- адаптивность'
+                                ],
+                            'a':  'http://trade-meta.ru/works/activebox/',
+                            'img': 'img/lpage.jpg'
+                        }
+                    }
+                //- Mixin: Start
+                mixin getcontent(elem)
+                    each p in elem.p
+                        p!= p
+                    ul
+                        each li in elem.li
+                            li: p= li
+                    a(class='moblink', href=elem['a'], target='_blank')
+                        span Перейти на сайт
+                    - if(elem['github']!=null)
+                        a(class='github', href=elem['github'], target='_blank')
+                            span Перейти в gitHub
+                //- Mixin: End
+                //- book pages: Start
+                each elem,h3 in portfolio
+                    div.pages1
+                        div.page-cont.build
+                            h3= h3
+                            +getcontent(elem)
+                    div.pages
+                        img(src=elem['img'], alt='')
+                div.pages1.last
+                    div.page-cont
+                        h5.elegantshadow Trade-meta
+                div.pages.last
+                    div.page-cont
+                        button(class='order', data-text='Заказать сайт')
+                            each str in 'Заказать сайт'
+                                span= str
+                div.pages1.hard
+                    div.page-cont
+                        h2.portf С уважением
+                        h2.portf Trade-meta
+                //- book pages: End
+            div.book-left
+                i(class='fa fa-hand-o-left', aria-hidden="true")
+            div.book-right
+                i(class='fa fa-hand-o-right', aria-hidden="true")
+            //book: End
+            //nobook: Start
+            .nobook
+                each elem,h3 in portfolio
+                    div.pages
+                        img(src=elem.img, alt='')
+                        div.pages1
+                            div.page-cont
+                                h3= h3
+                                +getcontent(elem)
+
+            //nobook: End
+
+
+    //portfolio: End
+
+    //form-block: Start
+    div.form-block
+        .wrap
+            h2 Обратная связь
+            form(class='form', action='#')
+                ul
+                    li
+                        input(type='text', placeholder='Имя', id='name', name='name', title='Минимум 3 символа')
+                        span.error
+                    li
+                        input(type='email', placeholder='E-mail', id='email', name='email', title='Некорректный e-mail')
+                        span.error
+                    li
+                        textarea(id='textarea', name='textarea', placeholder='Сообщение', title='Мин. 10 символов')
+                        span.error
+                    li
+                        input(type='submit', value='Отправить', class='submit')
+    //form-block: End
+
+    //footer: Start
+    div.footer-block
+        .wrap
+            footer
+                p © 2016 Trade-meta.
+                    span Создание сайтов. Вёрстка сайтов
+                p: a(href='skype:trademeta') Skype: trademeta
+                p: a(href='mailto:trade-meta@mail.ru') E-mail: trade-meta@mail.ru
+                div.trademeta
+                    span Trade-meta
+    //footer: End
+    a.menu-link(href='#menu')
+        span
+    nav#menu
+        ul
+            li: a(href='#', data-link='advantage') Преимущества
+            li: a(href='#', data-link='portfolio') Портфолио
+            li: a(href='#', data-link='form-block') Обратная связь
+            li: a(href='#', class='change-view') Внешний вид портфолио
+
+    //Submit message
+    div.popup
+        div.popup__overlay
+        div.popup__before
+        div.popup__content
+            p Сообщение отправлено. В ближайшее время ваше сообщение будет обработано
+
+    include additional/single-script
