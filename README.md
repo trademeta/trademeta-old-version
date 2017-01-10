@@ -6,3 +6,4 @@
 <li>app  - ещё не сжатые файлы для тестирования</li>
 <li>dist - сжатые файлы</li>
 </ul>
+<a href="https://github.com/trademeta/trademeta">Новая версия</a>
