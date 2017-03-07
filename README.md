@@ -7,3 +7,6 @@
 <li>dist - сжатые файлы</li>
 </ul>
 <a href="https://github.com/trademeta/trademeta">Новая версия</a>
+<br>
+<h2>Первая версия</h2>
+<a href="http://trade-meta.ru/works/trademeta-first/" target="_blank">Первая версия</a>
